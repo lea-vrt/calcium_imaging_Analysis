@@ -57,7 +57,7 @@ README.md
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/calcium-pipeline.git
+   git clone https://github.com/Sania-2000/calcium_imaging_Analysis.git
    cd calcium-pipeline
    ```
 
