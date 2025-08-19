@@ -1,16 +1,19 @@
 # Calcium Imaging Analysis Pipeline (Healthy vs SMA)
 
+This project aims to perform machine-learning based classification of healthy and pathological (SMA) behaviors recorded from calcium activity imaging obtained from cortical neurons, motorneurons and muscle cells. 
 This repository provides a **complete end-to-end pipeline** for analyzing 2-photon calcium imaging data with [Suite2p](https://github.com/MouseLand/suite2p).  
 It includes:
 
-- ROI extraction & spike inference (Suite2p)  
+- ROI extraction & spike inference (Suite2p)
+- ROI correlation map
 - Neuropil correction & ΔF/F computation  
 - Spike/burst detection and feature extraction  
 - Recording-level feature aggregation  
-- Machine learning classification (Healthy vs SMA)  
+- Machine learning classification (Healthy vs SMA)
 
-> Current dataset: ~8 recordings (results are exploratory, not final biomarkers).  
-The pipeline is modular and scalable → adding more recordings is straightforward.  
+> Recordings must be in .tif format.
+
+> The pipeline is currently under development and aims to be modular and scalable → adding more recordings to train the ML models will be straightforward.  
 
 ---
 
@@ -46,7 +49,7 @@ RECORDING_LEVEL.csv             # Aggregated per-recording features
 run_suite2p.py                  # Runs Suite2p on raw data
 preprocess_signals.py           # Neuropil correction + ΔF/F
 extract_features.py             # Spike detection + feature extraction
-analyze_correlations.py          # ROI correlation networks
+analyze_correlations.py         # ROI correlation networks
 train_classifier.py             # ML model training & evaluation
 README.md
 ```
@@ -54,6 +57,7 @@ README.md
 ---
 
 ## Installation
+**From the control terminal**
 
 1. **Clone the repository**
    ```bash
@@ -144,7 +148,7 @@ python train_classifier.py
 
 ##  Notes
 
-- With only **8 recordings**, ML results are unstable → use mainly for **pipeline demonstration**.  
+- With only **8 recordings at the moment**, ML results remain unreliable → use mainly for **pipeline demonstration**.  
 - Designed to be **scalable**: just drop new recordings into `input_data/` and re-run.  
 - Features and models can be extended for larger datasets.  
 
