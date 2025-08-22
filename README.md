@@ -56,7 +56,7 @@ README.md
 ---
 
 ## Installation
-# (for Windows users) All installation steps must be run from the computer's command prompt
+**(for Windows users) All installation steps must be run from the computer's command prompt**
 
 1. **Clone the repository**
    ```bash
